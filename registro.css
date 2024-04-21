@@ -2,13 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #215A6D; 
 }
 
 form {
     max-width: 400px;
     margin: 20px auto;
-    background-color: #fff;
+    background-color: #3CA2A2; 
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -22,18 +22,18 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="number"],
-input[type="date"],
+input[type="datetime"],
 input[type="email"] {
-    width: calc(100% - 22px);
+    width: 90%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; 
     border-radius: 4px;
 }
 
 input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #2D2D29; 
+    color: #FFF;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -42,15 +42,13 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #92C7A3;
 }
 
 a {
-    display: block;
-    text-align: center;
-    color: #4CAF50;
+    color: #DFECE6; 
     text-decoration: none;
-    margin-top: 20px;
+    margin-right: 10px;
 }
 
 a:hover {
