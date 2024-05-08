@@ -133,13 +133,13 @@ a:hover {
 .image-box {
     position: relative;
     max-width: 300px;
-    width: 100%;
+    width: 120%;
     background-color: #333;
     overflow: hidden;
 }
 .image {
     max-width: 100%;
-    height: auto;
+    height: 110%;
     display: block;
     transition: transform 0.3s ease;
 }
