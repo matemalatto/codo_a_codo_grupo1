@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 nav{
-    background: #3CA2A2;
+    background: #377474;
     height: 80px;
     width: 100%;
     position: sticky;
@@ -117,6 +117,7 @@ nav ul li a{
  font-family: "Montserrat", sans-serif;
 }
 li a:hover, li a.active{
+   
     background: none;
     color:#2D2D29;
 }
@@ -127,6 +128,9 @@ li a:hover, li a.active{
 }
 #check:checked ~ ul{
 left: 0;
+z-index: 1;
+
+
 }
 
 }

@@ -4,6 +4,9 @@ body {
     padding: 0;
     background-color: #3ca2a2;
     color: #DFECE6;
+    text-decoration :none;
+    list-style: none;
+    box-sizing: border-box;
 }
 
 header {
@@ -11,7 +14,10 @@ header {
     padding: 20px;
     align-items: center;
 }
-
+h1 {
+  margin-top: 20px;
+   text-align:center;
+}
 
 .Encabezado {
     display: flex;
@@ -35,7 +41,7 @@ header {
 }
 
 .opcion:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 table {
@@ -62,7 +68,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .container {
