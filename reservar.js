@@ -34,9 +34,10 @@ function validarFormulario(event) {
     }
 
     if (errores.length === 0) {
-        event.target.submit();
+       alert("Reserva completada, disfruta sus vacaciones!")
     } else {
         var mensajeErrores = errores.join('\n');
         alert(mensajeErrores);
     }
+    
 }
