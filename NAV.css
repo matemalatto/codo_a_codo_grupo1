@@ -9,7 +9,6 @@ nav{
     background: #377474;
     height: 80px;
     width: 100%;
-    position: sticky;
     position: relative;
     font-family: "Montserrat", sans-serif;
     align-items: center;
@@ -62,7 +61,7 @@ nav ul li a{
    
 }
 li a.active, li a:hover{
-    background-color: rgba(33, 90, 109, 0.3); 
+    background-color: rgba(155, 168, 172, 0.3); 
         transition: .5s;
    
 }
@@ -116,10 +115,9 @@ nav ul li a{
  font-size: 20 px;
  font-family: "Montserrat", sans-serif;
 }
-li a:hover, li a.active{
+li a:hover, li a.ancla:checked{
    
     background: none;
-    color:#2D2D29;
 }
 .contacto{
     font-size: 15 px;
@@ -129,7 +127,6 @@ li a:hover, li a.active{
 #check:checked ~ ul{
 left: 0;
 z-index: 1;
-
 
 }
 
