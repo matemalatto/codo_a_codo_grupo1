@@ -4,17 +4,6 @@
     box-sizing: border-box;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-section img {
-    margin-right: 10px; 
-    margin-top: -250px;
-}
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -34,11 +23,16 @@ header h1 {
 
 nav ul {
     list-style: none;
+    padding: 0;
 }
 
 nav ul li {
     display: inline;
     margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
 }
 
 nav ul li a {
@@ -67,12 +61,33 @@ footer {
     color: #92C7A3; 
     padding: 20px;
     text-align: center;
+    clear: both; 
 }
 
 img {
+    float: right; 
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
     max-height: 300px;
+}
+
+.section-with-image {
+    display: flex;
+    flex-direction: row; /* Establece la dirección de flexión horizontal */
+}
+
+.section-with-image .content {
+    flex: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 10px; /* Reducir el relleno en dispositivos más pequeños */
+    }
+
+    section img {
+        margin-top: 0; /* Eliminar el margen superior en dispositivos más pequeños */
+    }
 }
