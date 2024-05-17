@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         if (nombre !== '' && apellido !== '' && contraseña !== '' && fechaNacimiento !== '' && email !== '') {
-            alert('¡Bienvenido, ' + nombre + '!');
+            alert('¡Bienvenido/a, ' + nombre + '!');
             window.location.href = 'index.html';
         } else {
             alert('Por favor, completa todos los campos.');
