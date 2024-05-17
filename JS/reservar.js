@@ -35,6 +35,7 @@ function validarFormulario(event) {
 
     if (errores.length === 0) {
        alert("Reserva completada, disfruta sus vacaciones!")
+       window.location.href = 'index.html';
     } else {
         var mensajeErrores = errores.join('\n');
         alert(mensajeErrores);
