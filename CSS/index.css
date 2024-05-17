@@ -9,6 +9,10 @@ body {
     box-sizing: border-box;
 }
 
+footer{
+    background-color: #215A6D;
+}
+
 header {
     background-color: #215A6D;
     padding: 20px;
