@@ -1,0 +1,82 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.header{
+    background-color: black;
+}
+body
+{
+
+background-color: grey;
+color: antiquewhite;
+
+}
+h1
+{
+    color: aliceblue;
+
+}
+h2
+{
+    color: aliceblue;
+}
+h3
+{
+    color: aliceblue;
+}
+.Encabezado{
+    background-color: rgba(14, 17, 4, 0.616);
+    text-align: right;
+    text-decoration: none; 
+    color: #ffffff; 
+  
+}
+/*logo*/
+.T {
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* szombra */
+    text-align: left;
+   margin-left: 20px;
+}
+
+/*barra de nav*/
+.Barra{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+        font-size: 25px;
+        padding-top: 4px; 
+        word-spacing: 400px; 
+        line-height: 2;
+        
+}
+/*regstrate*/
+.op{
+    font-size: 20px;
+    margin-right: 10px;
+    padding-top: 2px;
+}
+
+.opcion, .op {
+
+    display: inline-block;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer; 
+    text-decoration: none; 
+    color: #ffffff; 
+    transition: background-color 0.3s; 
+}
+
+.opcion:hover {
+
+        transform: scale(1.1); 
+        text-shadow: 4px 4px 8px rgba(139, 111, 111, 0.529);
+        
+ }  
+ .op:hover {
+        color: rgba(255, 243, 243, 0.838); 
+       
+ }
+    
+
+    

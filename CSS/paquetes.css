@@ -70,6 +70,7 @@ img {
     height: auto;
     display: block;
     max-height: 300px;
+    padding: 20px;
 }
 
 .section-with-image {
@@ -83,8 +84,16 @@ img {
 
 
 @media screen and (max-width: 768px) {
+    .section-with-image {
+        display: block;
+    }
+    img{
+       height: 200px;
+       padding: 10px;
+    }
+ 
     main {
-        padding: 10px; /* Reducir el relleno en dispositivos más pequeños */
+        padding: 10px; /* pilaasss*/
     }
 
     section img {
