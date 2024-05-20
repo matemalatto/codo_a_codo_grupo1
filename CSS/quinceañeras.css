@@ -113,6 +113,11 @@ background-color: #3ea6a67c;
     color: #000;
   
 } 
+.container .back .link a{
+ 
+    color: #fff6f6;
+  
+} 
 .container .back h3{
    
     font-size: 25px;
