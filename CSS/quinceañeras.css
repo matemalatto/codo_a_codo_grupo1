@@ -113,6 +113,13 @@ background-color: #3ea6a67c;
     color: #000;
   
 } 
+footer {
+    background-color: #2D2D29; 
+    color: #92C7A3; 
+    padding: 20px;
+    text-align: center;
+    clear: both; 
+}
 .container .back .link a{
  
     color: #fff6f6;
