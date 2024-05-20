@@ -92,7 +92,7 @@ li a.active, li a:hover{
     }
 }
 /*cel*/
-@media(max-width:600px){
+@media(max-width:900px){
 .checkbtn{
     display: block;
 }
