@@ -67,8 +67,6 @@ function validarContraseña(contraseña) {
         errores.push('La contraseña debe contener al menos un número.');
     }
 
-  
-
     return errores;
 }
 
