@@ -18,9 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             errores.push('El campo "Apellido" es obligatorio.');
         }
 
-        if (contraseña === '') {
-            errores.push('El campo "Contraseña" es obligatorio.');
-        }
+        errores = errores.concat(validarContraseña(contraseña));
 
         if (fechaNacimiento === '') {
             errores.push('El campo "Fecha de Nacimiento" es obligatorio.');
@@ -35,13 +33,44 @@ document.addEventListener('DOMContentLoaded', function () {
         if (errores.length > 0) {
             alert(errores.join('\n'));
         } else {
-            event.target.submit(); 
-            alert("Muchas gracias por registrarse, " + nombre)
+            alert("Muchas gracias por registrarse, " + nombre);
+            event.target.submit();
             window.location.href = 'inicio_sesion.html';
-
         }
     });
 });
+
+function validarContraseña(contraseña) {
+    const errores = [];
+
+    if (contraseña === '') {
+        errores.push('El campo "Contraseña" es obligatorio.');
+    }
+
+  
+    if (contraseña.length < 8) {
+        errores.push('La contraseña debe tener al menos 8 caracteres.');
+    }
+
+   
+    if (!/[A-Z]/.test(contraseña)) {
+        errores.push('La contraseña debe contener al menos una letra mayúscula.');
+    }
+
+   
+    if (!/[a-z]/.test(contraseña)) {
+        errores.push('La contraseña debe contener al menos una letra minúscula.');
+    }
+
+   
+    if (!/[0-9]/.test(contraseña)) {
+        errores.push('La contraseña debe contener al menos un número.');
+    }
+
+  
+
+    return errores;
+}
 
 function validarEmail(email) {
     var re = /\S+@\S+\.\S+/;
