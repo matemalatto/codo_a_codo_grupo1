@@ -9,6 +9,7 @@ function validarFormulario(event) {
     var apellido = document.getElementById('apellido').value.trim();
     var edad = document.getElementById('edad').value;
     var clase = document.getElementById('clase').value;
+    var folder = document.getElementById('folder').value;
     var terminosCondiciones = document.getElementById('terminosCondiciones').checked;
 
     var errores = [];
@@ -16,6 +17,7 @@ function validarFormulario(event) {
     if (nombre === '') {
         errores.push('El nombre es obligatorio');
     }
+   
 
     if (apellido === '') {
         errores.push('El apellido es obligatorio');
@@ -28,7 +30,9 @@ function validarFormulario(event) {
     if (clase === '') {
         errores.push('Selecciona una clase');
     }
-
+ if (folder === '') {
+        errores.push('Es necesaria la foto de su dni');
+    }
     if (!terminosCondiciones) {
         errores.push('Debes aceptar los terminos y condiciones');
     }
