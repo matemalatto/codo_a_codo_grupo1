@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title> Registro </title>
-        <link rel="stylesheet" href="/CSS/registro.css">
-        <script src="/JS/registro.js"></script>
-        <link rel="shortcut icon" href="avion.ico" type="image/x-ico">
-    </head>
-    <body>
-        <form>
-            <label for="nombre">Ingrese su nombre:</label><br>
-            <input type="text" id="nombre" name="nombre"><br>
-            
-            <label for="apellido">Ingrese su apellido:</label><br>
-            <input type="text" id="apellido" name="apellido"><br>
-            
-            <label for="contraseña">Ingrese su contraseña:</label><br>
-            <input type="password" id="contraseña" name="contraseña"><br>
-            
-            <label for="fecha_de_nacimiento">Ingrese su fecha de nacimiento:</label><br>
-            <input type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento"><br>
-            
-            <label for="mail">Ingrese su correo electrónico:</label><br>
-            <input type="email" id="mail" name="mail"><br>
-            
-            <input type="submit"><br>
-            <a href="inicio_sesion.html">Volver al inicio de sesión</a>
-            <a href="index.html">Volver al menú principal</a>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <script src="/JS/registro.js"></script>
+    <link rel="stylesheet" href="/CSS/registro.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de Usuario</h2>
+        <form method="POST" action="{{ url_for('registro') }}">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+
+            <label for="fecha_de_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento" required>
+
+            <label for="mail">Correo Electrónico:</label>
+            <input type="email" id="mail" name="mail" required>
+
+            <input type="submit" value="Registrar">
         </form>
-    </body>
+    </div>
+</body>
 </html>
