@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Destinos de Viaje 🚀</title>
+    <link rel="stylesheet" href="./static/css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar-index">
+            <img class="logo-nav" src="./static/imagenes/logo.png" alt="logo agencia de aprendizaje">
+        </nav>
+    </header>
+
+    <div class="logo-centrado">
+        <img src="./static/imagenes/logo.png" alt="logo">
+    </div>
+    <h1>Eliminar Destinos de Viaje</h1><br>
+
+    <table id="destinos-table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>País</th>
+                <th>Ciudad</th>
+                <th align="right">Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table><br>
+
+    <div class="contenedor-centrado">
+        <a href="indexCRUD.html">Menú principal</a>
+    </div>
+
+    <script>
+        const URL = "http://127.0.0.1:5000/";
+        // const URL = "https://juanpablocodo.pythonanywhere.com/";
+
+        // Obtiene la lista de destinos de viaje desde el servidor
+        function obtenerDestinos() {
+            fetch(URL + 'destinos')
+                .then(response => {
+                    if (response.ok) { return response.json(); }
+                })
+                .then(data => {
+                    const destinosTable = document.getElementById('destinos-table').getElementsByTagName('tbody')[0];
+                    destinosTable.innerHTML = '';
+                    data.forEach(destino => {
+                        const row = destinosTable.insertRow();
+                        row.innerHTML = `
+                            <td>${destino.codigo}</td>
+                            <td>${destino.pais}</td>
+                            <td>${destino.ciudad}</td>
+                            <td align="right">${destino.precio}</td>
+                            <td><button onclick="eliminarDestino('${destino.codigo}')">Eliminar</button></td>
+                        `;
+                    });
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                    alert('Error al obtener los destinos de viaje.');
+                });
+        }
+
+        // Función para eliminar un destino de viaje por su código
+        function eliminarDestino(codigo) {
+            if (confirm('¿Estás seguro de que quieres eliminar este destino de viaje?')) {
+                fetch(URL + `destinos/${codigo}`, { method: 'DELETE' })
+                    .then(response => {
+                        if (response.ok) {
+                            obtenerDestinos(); // Actualiza la lista de destinos después de eliminar uno.
+                            alert('Destino de viaje eliminado correctamente.');
+                        }
+                    })
+                    .catch(error => {
+                        alert('Error al eliminar el destino de viaje.');
+                    });
+            }
+        }
+
+        // Cargar la lista de destinos de viaje cuando la página se carga completamente.
+        document.addEventListener('DOMContentLoaded', obtenerDestinos);
+    </script>
+</body>
+
+</html>

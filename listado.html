@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Destinos 🚀</title>
+    <link rel="stylesheet" href="./static/css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar-index ">
+            <img class="logo-nav" src="./static/imagenes/logo.png" alt="logo agencia de aprendizaje">
+        </nav>
+    </header>
+
+    <div class="logo-centrado">
+        <img src="./static/imagenes/logo.png" alt="logo">
+    </div>
+    <h1>Listado de Destinos de Viaje</h1><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>País</th>
+                <th>Ciudad</th>
+                <th align="right">Precio</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody id="tablaDestinos"></tbody>
+    </table><br>
+
+    <div class="contenedor-centrado">
+        <a href="indexCRUD.html">Menú principal</a>
+    </div>
+
+    <script>
+        const URL = "http://127.0.0.1:5000/";
+        // const URL = "https://juanpablocodo.pythonanywhere.com/";
+
+        // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+        // const URL = "https://USUARIO.pythonanywhere.com/";
+
+        // Realizamos la solicitud GET al servidor para obtener todos los destinos de viaje.
+        fetch(URL + 'destinos')
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json(); // Convierte la respuesta a JSON si es exitosa.
+                } else {
+                    throw new Error('Error al obtener los destinos.'); // Lanza un error si la respuesta no es exitosa.
+                }
+            })
+            .then(function (data) {
+                let tablaDestinos = document.getElementById('tablaDestinos'); // Obtiene la referencia a la tabla en el HTML.
+
+                // Itera sobre cada destino y crea filas para la tabla.
+                for (let destino of data) {
+                    let fila = document.createElement('tr'); // Crea una nueva fila para cada destino.
+
+                    // Llena la fila con los datos del destino.
+                    fila.innerHTML = '<td>' + destino.codigo + '</td>' +
+                        '<td>' + destino.pais + '</td>' +
+                        '<td>' + destino.ciudad + '</td>' +
+                        '<td align="right">' + destino.precio + '</td>' +
+                        '<td><img src="./static/imagenes/' + destino.imagen_url + '" alt="Imagen del destino" style="width: 100px;"></td>';
+
+                    tablaDestinos.appendChild(fila); // Agrega la fila a la tabla de destinos.
+                }
+            })
+            .catch(function (error) {
+                alert('Error al obtener los destinos.'); // Maneja errores mostrando una alerta.
+            });
+    </script>
+</body>
+
+</html>
